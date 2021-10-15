@@ -1,0 +1,57 @@
+@import "./fonts.css";
+@import "./reset.css";
+
+:root {
+
+  /* Colors */
+  --primary: #FFFFFF;
+  --secondary: #070724;
+  --secondary-light: #38384F;
+
+  --gray: #838391;
+  --blue-light: #419EBB;
+  --yellow: #EDA249;
+  --purple: #6F2ED6;
+  --orange-dark: #D14C32;
+  --red: #D83A34;
+  --orange-light: #CD5120;
+  --green-light: #1EC2A4;
+  --blue-dark: #2D68F0;
+
+  /* Fonts */
+  --heading-font: 'Antonio', sans-serif;
+  --body-font: 'Spartan', sans-serif;
+
+  /* Font sizes */
+  --body-font-size: 0.875;
+  --heading-one: 5rem;
+  --heading-two: 2.5rem;
+  --heading-three: 0.75rem;
+  --heading-four: 0.688rem;
+
+  /* Font Weight */
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-light: 400;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--body-font);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(var(--heading-two), 6vw, var(--heading-one));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
