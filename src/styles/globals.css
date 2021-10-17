@@ -1,26 +1,28 @@
 @import "./fonts.css";
 @import "./reset.css";
+@import "./icons.css";
 
 :root {
-
   /* Colors */
-  --primary: #FFFFFF;
+  --primary: #ffffff;
   --secondary: #070724;
-  --secondary-light: #38384F;
+  --secondary-light: #38384f;
 
+  --black: #000000;
   --gray: #838391;
-  --blue-light: #419EBB;
-  --yellow: #EDA249;
-  --purple: #6F2ED6;
-  --orange-dark: #D14C32;
-  --red: #D83A34;
-  --orange-light: #CD5120;
-  --green-light: #1EC2A4;
-  --blue-dark: #2D68F0;
+  --gray-dark: #979797;
+  --blue-light: #419ebb;
+  --yellow: #eda249;
+  --purple: #6f2ed6;
+  --orange-dark: #d14c32;
+  --red: #d83a34;
+  --orange-light: #cd5120;
+  --green-light: #1ec2a4;
+  --blue-dark: #2d68f0;
 
   /* Fonts */
-  --heading-font: 'Antonio', sans-serif;
-  --body-font: 'Spartan', sans-serif;
+  --heading-font: "Antonio", sans-serif;
+  --body-font: "Spartan", sans-serif;
 
   /* Font sizes */
   --body-font-size: 0.875;
@@ -33,13 +35,23 @@
   --font-weight-bold: 700;
   --font-weight-medium: 500;
   --font-weight-light: 400;
+
+  /* Spacing */
+  --base-padding: 24px;
+  --spacing-xs: 24px;
+  --spacing-m: 32px;
+  --spacing-l: 40px;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
+}
+
+body {
   font-family: var(--body-font);
+  color: var(--primary);
 }
 
 h1 {
@@ -52,6 +64,9 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+@media screen and (min-width: 768px) {
+  :root {
+    --base-padding: 40px;
+    --spacing-xs: 32px;
+  }
 }

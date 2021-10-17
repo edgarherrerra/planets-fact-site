@@ -12,7 +12,7 @@ export const MainLayout = ({ children }: Props) => {
   return (
     <div className={styles.layout}>
       <Header />
-      <main className="container">{children}</main>
+      <main className={styles.container}>{children}</main>
     </div>
   );
 };

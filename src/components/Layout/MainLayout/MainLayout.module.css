@@ -29,6 +29,12 @@
   z-index: -1;
 }
 
+.container {
+  padding: 0 var(--base-padding);
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
 @keyframes slideGradient {
   0% {
     background-position: 0% 51%;
@@ -40,7 +46,6 @@
     background-position: 0% 51%;
   }
 }
-
 
 @keyframes slide {
   0% {
