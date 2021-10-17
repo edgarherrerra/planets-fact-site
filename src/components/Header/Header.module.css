@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px var(--spacing-xs);
+  border-bottom: 1px solid var(--gray-dark);
+}
+
+.header .title {
+  font-family: var(--heading-font);
+  font-size: 28px;
+}
+
+.header button {
+  outline: 0;
+}
+
