@@ -20,6 +20,16 @@
   --green-light: #1ec2a4;
   --blue-dark: #2d68f0;
 
+  /* Planets */
+  --mercury: #def4fc;
+  --venus: #f7cc7f;
+  --earth: #545bfe;
+  --mars: #ff6a45;
+  --jupiter: #ecad7a;
+  --saturn: #fccb6b;
+  --uranus: #65f0d5;
+  --neptune: #497efa;
+
   /* Fonts */
   --heading-font: "Antonio", sans-serif;
   --body-font: "Spartan", sans-serif;
@@ -62,6 +72,42 @@ h1 {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.mercury {
+  background: var(--mercury);
+}
+
+.venus {
+  background: var(--venus);
+}
+
+.earth {
+  background: var(--earth);
+}
+
+.mars {
+  background: var(--mars);
+}
+
+.jupiter {
+  background: var(--jupiter);
+}
+
+.saturn {
+  background: var(--saturn);
+}
+
+.uranus {
+  background: var(--uranus);
+}
+
+.neptune {
+  background: var(--neptune);
+}
+
+.default-planet-color {
+  background: var(--primary);
 }
 
 @media screen and (min-width: 768px) {
