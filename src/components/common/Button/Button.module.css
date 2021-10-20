@@ -1,0 +1,55 @@
+.buttonContainer {
+  display: flex;
+  width: 100%;
+  padding: 19px 0;
+  font-weight: 700;
+  font-size: 0.563rem;
+  letter-spacing: 0.12rem;
+}
+
+.labelContainer {
+  flex: 1;
+}
+
+.label,
+.indexItem {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .buttonContainer {
+    border: 1px solid var(--gray);
+    padding: 19px 20px;
+  }
+
+  .label,
+  .indexItem {
+    display: initial;
+  }
+
+  .indexItem {
+    font-size: 0.563rem;
+    font-weight: 700;
+    color: var(--gray);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .buttonContainer {
+    font-size: 0.75rem;
+    padding: 19px 24px;
+  }
+
+  .buttonContainer:hover {
+    background: var(--secondary-light);
+  }
+
+  .indexItem {
+    font-size: 0.75rem;
+  }
+
+  .labelContainer {
+    flex: initial;
+    padding-left: 24px;
+  }
+}
