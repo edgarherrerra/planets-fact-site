@@ -73,11 +73,16 @@
 
   .tabDataWrapper {
     display: inherit;
+    align-items: flex-end;
   }
 
   .planetTabs {
     position: initial;
     width: 281px;
+  }
+
+  .planetImageContainer {
+    padding: 110px 0 110px 0;
   }
 
   .planetData {
@@ -108,6 +113,7 @@
     flex-direction: column;
     flex: 1;
     justify-content: center;
+    align-items: initial;
   }
 
   .planetTabs {
@@ -135,6 +141,6 @@
   }
 
   .planetImageContainer .imageWrapper {
-    padding-left: 90px;
+    width: 100%;
   }
 }

@@ -11,6 +11,7 @@ import styles from "styles/Planets.module.css";
 import React from "react";
 import { Stats } from "~/components/common/Stats/Stats";
 import { PlanetByIdResponse } from "~/ts/types";
+import PlanetImage from "~/components/common/PlanetImage/PlanetImage";
 
 interface Props {
   planet: PlanetByIdResponse;
@@ -44,12 +45,7 @@ const Planets: NextPage<Props> = ({ planet }) => {
         </div>
         <section className={styles.planetImageContainer}>
           <div className={styles.imageWrapper}>
-            <Image
-              src={planet.images.planet}
-              alt="Planet"
-              width={450}
-              height={450}
-            />
+            <PlanetImage planet={planet.name} image={planet.images.planet} />
           </div>
         </section>
       </div>
