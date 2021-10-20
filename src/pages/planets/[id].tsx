@@ -10,9 +10,10 @@ import { planetsIcons } from "~/lib/constants/icons";
 import styles from "styles/Planets.module.css";
 import React from "react";
 import { Stats } from "~/components/common/Stats/Stats";
+import { PlanetByIdResponse } from "~/ts/types";
 
 interface Props {
-  planet: any;
+  planet: PlanetByIdResponse;
 }
 
 const Planets: NextPage<Props> = ({ planet }) => {
@@ -22,17 +23,17 @@ const Planets: NextPage<Props> = ({ planet }) => {
       <div className={styles.tabsDataContainer}>
         <div className={styles.tabDataWrapper}>
           <section className={styles.planetTabs}>
-            <Tabs />
+            <Tabs data={planet.tabs} />
           </section>
           <section className={styles.planetData}>
             <h1>{planet.name}</h1>
-            <p className={styles.description}>{planet.overview.content}</p>
+            <p className={styles.description}>{planet.tabs[0].data.content}</p>
             <p className={styles.source}>
               <span>Source : </span>
               <a
                 target="_blank"
                 rel="noreferrer"
-                href={planet.overview.source}
+                href={planet.tabs[0].data.source}
                 className={styles.link}
               >
                 Wikipedia
@@ -52,11 +53,10 @@ const Planets: NextPage<Props> = ({ planet }) => {
           </div>
         </section>
       </div>
-      {/* Section - Tabs - Data - Planet */}
 
       {/* Section - Stats - Planet */}
       <section className={styles.planetDetail}>
-        <Stats />
+        <Stats data={planet.stats} />
       </section>
       {/* Section - Stats Planet */}
     </MainLayout>
@@ -64,10 +64,8 @@ const Planets: NextPage<Props> = ({ planet }) => {
 };
 
 export async function getStaticPaths() {
-  const res = await fetch(
-    `https://mocki.io/v1/ad7f475b-86e3-4d64-b2cd-8755bba41bb7`
-  );
-  const planets = await res.json();
+  const res = await fetch(`http://localhost:3000/api/planets`);
+  const { planets } = await res.json();
 
   const paths = planets.map((planet: any) => ({
     params: { id: planet.id.toString() },
@@ -76,11 +74,8 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const res = await fetch(
-    `https://mocki.io/v1/ad7f475b-86e3-4d64-b2cd-8755bba41bb7`
-  );
-  const planets = await res.json();
-  const planet = planets.filter((element: any) => element.id == params?.id)[0];
+  const res = await fetch(`http://localhost:3000/api/planets/${params?.id}`);
+  const { planet } = await res.json();
 
   return {
     props: { planet },
