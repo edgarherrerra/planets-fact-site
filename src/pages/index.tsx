@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
+import Link from "next/link";
 
 import styles from "styles/Home.module.css";
 
@@ -14,26 +15,33 @@ interface Props {
 const Home: NextPage<Props> = ({ planets }) => {
   return (
     <MainLayout>
-      <ul className={styles.planetList}>
-        {planets.map((planet) => {
-          const { name } = planet;
-          return (
-            <li key={planet.id} className={styles.planetItem}>
-              <a href="#">
-                <span className={styles.planetContainer}>
-                  <span
-                    className={`${styles.planet} ${
-                      name ? name.toLowerCase() : "default-planet-color"
-                    }`}
-                  ></span>
-                  {planet.name}
-                </span>
-                <Icon icon={planetsIcons.arrowRight} />
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+      <section>
+        <ul className={styles.planetList}>
+          {planets.map((planet) => {
+            const { name } = planet;
+            return (
+              <li key={planet.id} className={styles.planetItem}>
+                <Link
+                  passHref={false}
+                  href={`planets/${encodeURIComponent(planet.id)}`}
+                >
+                  <a href="#">
+                    <span className={styles.planetContainer}>
+                      <span
+                        className={`${styles.planet} ${
+                          name ? name.toLowerCase() : "default-planet-color"
+                        }`}
+                      ></span>
+                      {planet.name}
+                    </span>
+                    <Icon icon={planetsIcons.arrowRight} />
+                  </a>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
     </MainLayout>
   );
 };
