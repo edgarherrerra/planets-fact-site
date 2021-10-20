@@ -1,4 +1,6 @@
 .layout {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   height: 100%;
   position: relative;
@@ -32,7 +34,11 @@
 .container {
   padding: 0 var(--base-padding);
   max-width: 1110px;
+  width: 100%;
   margin: 0 auto;
+  display: inherit;
+  flex-direction: inherit;
+  flex: 1;
 }
 
 @keyframes slideGradient {
@@ -49,9 +55,15 @@
 
 @keyframes slide {
   0% {
-    background-position : 0 0;
+    background-position: 0 0;
   }
   100% {
-    background-position : -1532px 0;
+    background-position: -1532px 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    padding: 0;
   }
 }

@@ -1,0 +1,140 @@
+/*  tabsDataContainer */
+
+.tabsDataContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  margin: 0px -24px;
+  flex: 1;
+}
+
+.planetTabs {
+  order: 2;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.planetImageContainer {
+  padding: 110px 0 50px 0;
+}
+
+.planetImageContainer .imageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.planetData {
+  text-align: center;
+  padding: 0 24px;
+}
+
+.planetData .description {
+  padding-top: 16px;
+  font-size: 0.688rem;
+  line-height: 2;
+}
+
+.planetData .source {
+  padding-top: 32px;
+  color: var(--gray);
+  font-size: 0.75rem;
+}
+
+.planetData .source .link {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.planetData .source .link i {
+  padding-left: 4px;
+}
+
+/* tabsDataContainer */
+
+/* planetDetail */
+
+.planetDetail {
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+/* planetDetail */
+
+@media screen and (min-width: 768px) {
+  .tabsDataContainer {
+    margin: 0;
+  }
+
+  .tabDataWrapper {
+    display: inherit;
+  }
+
+  .planetTabs {
+    position: initial;
+    width: 281px;
+  }
+
+  .planetData {
+    padding: 0;
+    text-align: left;
+    margin-right: 70px;
+    flex: 1;
+  }
+
+  .planetData .description {
+    padding-top: 24px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .tabsDataContainer {
+    flex-direction: row-reverse;
+    padding-top: 125px;
+    flex: initial;
+  }
+
+  .planetDetail {
+    padding-top: 74px;
+    flex: initial;
+  }
+
+  .tabDataWrapper {
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .planetTabs {
+    width: auto;
+  }
+
+  .planetData {
+    margin: 0;
+    padding-bottom: 40px;
+    flex: initial;
+  }
+
+  .planetData .description {
+    font-size: 0.875rem;
+  }
+
+  .planetData .source {
+    font-size: 0.875rem;
+  }
+
+  .planetImageContainer {
+    display: flex;
+    flex: 2;
+    padding: 0;
+  }
+
+  .planetImageContainer .imageWrapper {
+    padding-left: 90px;
+  }
+}
