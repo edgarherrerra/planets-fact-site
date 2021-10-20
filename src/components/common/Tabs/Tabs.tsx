@@ -1,19 +1,21 @@
 import Button from "../Button/Button";
 import styles from "./Tabs.module.css";
 
-export const Tabs = () => {
+interface Props {
+  data: [];
+}
+
+export const Tabs = ({ data }: Props) => {
   return (
     <>
       <ul className={styles.list}>
-        <li className={styles.listItem}>
-          <Button />
-        </li>
-        <li className={styles.listItem}>
-          <Button />
-        </li>
-        <li className={styles.listItem}>
-          <Button />
-        </li>
+        {data.map((element: any) => {
+          return (
+            <li key={element.id} className={styles.listItem}>
+              <Button index={element.id} title={element.name} />
+            </li>
+          );
+        })}
       </ul>
     </>
   );
