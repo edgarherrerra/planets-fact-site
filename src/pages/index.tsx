@@ -47,10 +47,8 @@ const Home: NextPage<Props> = ({ planets }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(
-    `https://mocki.io/v1/ad7f475b-86e3-4d64-b2cd-8755bba41bb7`
-  );
-  const planets = await res.json();
+  const res = await fetch("http://localhost:3000/api/planets");
+  const { planets } = await res.json();
 
   return {
     props: { planets },
