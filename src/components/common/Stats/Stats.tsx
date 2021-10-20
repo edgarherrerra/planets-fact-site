@@ -1,7 +1,7 @@
 import styles from "./Stats.module.css";
 
 interface Props {
-  data: [];
+  data: Array<any>;
 }
 
 export const Stats = ({ data }: Props) => {
