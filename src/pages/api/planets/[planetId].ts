@@ -22,21 +22,27 @@ export default async function handler(
       return {
         id: element.id,
         name: element.name,
-        data: [
+        tabs: [
           {
-            overview: {
+            id: 1,
+            name: "Overview",
+            data: {
               content: element.overview.content,
               source: element.overview.source,
             },
           },
           {
-            structure: {
+            id: 2,
+            name: "Structure Internal",
+            data: {
               content: element.structure.content,
               source: element.structure.source,
             },
           },
           {
-            geology: {
+            id: 3,
+            name: "Surface Geology",
+            data: {
               content: element.geology.content,
               source: element.geology.source,
             },
@@ -44,16 +50,24 @@ export default async function handler(
         ],
         stats: [
           {
-            rotation: element.rotation,
+            id: 1,
+            name: "Rotation Time",
+            data: element.rotation,
           },
           {
-            revolution: element.revolution,
+            id: 2,
+            name: "Revolution Time",
+            data: element.revolution,
           },
           {
-            radius: element.radius,
+            id: 3,
+            name: "Radius",
+            data: element.radius,
           },
           {
-            temperature: element.temperature,
+            id: 4,
+            name: "Average Temp.",
+            data: element.temperature,
           },
         ],
         images: element.images,
