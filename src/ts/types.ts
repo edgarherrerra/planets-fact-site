@@ -30,7 +30,7 @@ export type PlanetDetailed = {
 export type PlanetByIdResponse = {
   id: number;
   name: string;
-  data: [];
+  tabs: [];
   stats: [];
   images: PlanetImages;
 };
