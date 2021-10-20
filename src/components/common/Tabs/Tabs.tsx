@@ -2,7 +2,7 @@ import Button from "../Button/Button";
 import styles from "./Tabs.module.css";
 
 interface Props {
-  data: [];
+  data: Array<any>;
 }
 
 export const Tabs = ({ data }: Props) => {
