@@ -4,7 +4,7 @@
   position: absolute;
   width: 50%;
   max-width: 250px;
-  height: 25%;
+  max-height: 250px;
   top: 65px;
   right: 24px;
   z-index: 2;
@@ -38,13 +38,13 @@
 
 .sectionTitle {
   font-size: 1rem;
-  padding-bottom: 16px;
+  padding-bottom: 24px;
 }
 
 .list {
   display: inherit;
-  flex-direction: inherit;
-  font-size: 12px;
+  flex-direction: row;
+  font-size: 0.75rem;
   flex: 1;
   justify-content: space-around;
 }

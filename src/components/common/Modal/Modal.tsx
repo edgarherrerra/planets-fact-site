@@ -1,7 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { State } from "~/redux/reducer";
+import Clock from "../Clock/Clock";
 import styles from "./Modal.module.css";
 
 export const Modal = () => {
+  const { lastUpdate } = useSelector<State, State>((state) => state);
+
   return (
     <div className={styles.container}>
       <section className={styles.titleContainer}>
@@ -17,6 +22,10 @@ export const Modal = () => {
             <button>Inglés</button>
           </li>
         </ul>
+      </section>
+      <section className={styles.languagesContainer}>
+        <h1 className={styles.sectionTitle}>Hora actual</h1>
+        <Clock lastUpdate={lastUpdate} />
       </section>
     </div>
   );
