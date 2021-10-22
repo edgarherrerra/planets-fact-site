@@ -28,13 +28,21 @@ No public API matched the project design when developing the application, so I c
 
 ## Getting Started
 
-First, clone the repository and install all the dependencies:
+First, clone the repository and go to the terapify-challenge branch:
 
+```git
+  git checkout terapify-challenge
 ```
+
+Then, install all the dependencies:
+
+```bash
+npm install
+# or
 yarn install
 ```
 
-Then, run the development server:
+And finally, run the development server:
 
 ```bash
 npm run dev
