@@ -1,4 +1,7 @@
 {
-  "h1": "Mercurio",
-  "change-locale": "Cambiar idioma"
+  "settings": "Configuración",
+  "currentHour": "Hora Actual",
+  "languages": "Lenguajes",
+  "localeEs": "Español",
+  "localeEn": "Inglés"
 }

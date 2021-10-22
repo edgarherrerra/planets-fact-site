@@ -1,17 +1,18 @@
+import React from "react";
 import { GetStaticProps, NextPage } from "next";
-import Image from "next/image";
 
 import { Icon } from "~/components/common/Icon";
 import { Tabs } from "~/components/common/Tabs/Tabs";
-
+import { Stats } from "~/components/common/Stats/Stats";
+import PlanetImage from "~/components/common/PlanetImage/PlanetImage";
 import { MainLayout } from "~/components/Layout/MainLayout/MainLayout";
+
+import { PlanetByIdResponse } from "~/ts/types";
 import { planetsIcons } from "~/lib/constants/icons";
 
 import styles from "styles/Planets.module.css";
-import React from "react";
-import { Stats } from "~/components/common/Stats/Stats";
-import { PlanetByIdResponse } from "~/ts/types";
-import PlanetImage from "~/components/common/PlanetImage/PlanetImage";
+
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props {
   planet: PlanetByIdResponse;
@@ -69,12 +70,15 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({
+  params,
+  locale = "en",
+}) => {
   const res = await fetch(`http://localhost:3000/api/planets/${params?.id}`);
   const { planet } = await res.json();
 
   return {
-    props: { planet },
+    props: { planet, ...(await serverSideTranslations(locale, ["common"])) },
   };
 };
 

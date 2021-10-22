@@ -1,4 +1,7 @@
 {
-  "h1": "Mercury",
-  "change-locale": "Change locale"
+  "settings": "Settings",
+  "currentHour": "Current Hour",
+  "languages": "Languages",
+  "localeEs": "Spanish",
+  "localeEn": "English"
 }

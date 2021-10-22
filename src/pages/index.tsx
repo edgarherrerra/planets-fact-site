@@ -15,6 +15,8 @@ import { startClock, tickClock } from "~/redux/actions";
 
 import { planetsIcons } from "~/lib/constants/icons";
 
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 interface Props {
   planets: Array<any>;
 }
@@ -60,18 +62,22 @@ const Home: NextPage<Props> = ({ planets }: Props) => {
 };
 
 export const getServerSideProps = wrapper.getServerSideProps(
-  (store) => async () => {
-    store.dispatch(tickClock());
-    store.dispatch(END);
-    await (store as SagaStore).sagaTask.toPromise();
+  (store) =>
+    async ({ locale = "en" }) => {
+      store.dispatch(tickClock());
+      store.dispatch(END);
+      await (store as SagaStore).sagaTask.toPromise();
 
-    const res = await fetch("http://localhost:3000/api/planets");
-    const { planets } = await res.json();
+      const res = await fetch("http://localhost:3000/api/planets");
+      const { planets } = await res.json();
 
-    return {
-      props: { planets },
-    };
-  }
+      return {
+        props: {
+          planets,
+          ...(await serverSideTranslations(locale, ["common"])),
+        },
+      };
+    }
 );
 
 export default Home;
